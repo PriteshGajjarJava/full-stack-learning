@@ -1,0 +1,16 @@
+ body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+/* Class level CSS */
+.container {
+/* Adjust the margins and paddings as per your requirement */
+margin: 50px;
+padding: 20px 50px;
+border-radius: 10px;
+border: 2px solid red;
+background-color: aliceblue;
+}

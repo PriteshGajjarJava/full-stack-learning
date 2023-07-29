@@ -1,0 +1,62 @@
+<HTML>
+ <head>
+ 	<style type="text/css">
+ 		.highlight {
+ 			color: blue;
+ 			border: 1px solid black;
+ 			background-color: orange;
+ 		}
+ 	</style>
+ 	<script type="text/javascript">
+ 		function showWelcome() {
+ 			// document - In built object of Javascript, which refers to DOM tree
+ 			var obj = document.getElementById('name');
+ 			var bodyObj = document.getElementsByTagName('body')[0];
+
+
+ 			var existingObj = document.getElementsByTagName('h3')[0];
+ 			if (existingObj) {
+ 				bodyObj.removeChild(existingObj);// in-built function to remove HTML element
+ 			}
+ 			
+ 			// in-built function to create new HTML element
+ 			var h3Obj = document.createElement('h3');
+ 
+ 			// Way of applying CSS using js
+ 			h3Obj.setAttribute('class', 'highlight');
+ 			// h3Obj.style.color = 'Green';
+ 			// h3Obj.style.border = '1px solid black';
+ 			// h3Obj.style.backgroundColor = 'orange';
+ 			h3Obj.innerHTML = 'welcome ' + obj.value;
+ 			bodyObj.appendChild(h3Obj);
+ 		}
+ 		function enableButton() {
+ 			var btnObj = document.getElementById('btn1');
+ 			var textObj = document.getElementById('name');
+ 			if (textObj.value.length == 0) {
+				btnObj.setAttribute('disabled', true);
+ 			} else {
+ 				btnObj.removeAttribute('disabled');
+ 			}
+ 		}
+ 	</script>
+ </head>
+ <body>
+ 	Enter your name:
+ 	<input oninput="enableButton()" type="text" id="name"/>
+ 	<button id='btn1' onclick="showWelcome()" disabled>Click Me</button>
+ </body>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+

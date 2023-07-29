@@ -1,0 +1,20 @@
+
+<p id='para1' class='content' style="attr1:value1">
+
+There are 4 ways of defining CSS:
+1) Tag based CSS selector
+	p {} 
+
+2) ID based CSS selector
+	#para1 {}
+
+3) Class based CSS selector
+	.content {}
+
+4) Inline css using style attribute
+
+Prirority order:
+	inline -> id -> class -> Tag
+
+While CSS rule should get executed is dervied based on concept called as
+"CSS Specificity"
