@@ -1,0 +1,43 @@
+<HTML>
+ <head>
+ 	<script type="text/javascript">
+ 		function calculate(n1, n2, op) {
+ 			var ans = 0;
+ 			n1 = parseInt(n1);
+ 			n2 = parseInt(n2);
+ 			switch (op) {
+ 				case '+': ans = n1 + n2; break;
+ 				case '-': ans = n1 - n2; break;
+ 				case '*': ans = n1 * n2; break;
+ 				case '/': ans = n1 / n2; break;
+ 			}
+ 			var ansObj = document.getElementById('ans');
+ 			ansObj.value = ans;
+ 		}
+ 	</script>
+ </head>
+ <body>
+ 	<table>
+ 	 <tr>
+ 	 	<th> Number 1 </th>
+ 	 	<th> Operator </th>
+ 	 	<th> Number 2 </th>
+ 	 	<th> </th>
+ 	 	<th> Answer </th>
+ 	 </tr>
+ 	 <tr>
+ 	 	<td> <input type='number' id='num1'/> </td>
+ 	 	<td> <select id='op' onchange="calculate(num1.value, num2.value, op.value)">
+ 	 			<option value='+'> + </option>	
+ 	 			<option value='-'> - </option>
+ 	 			<option value='*'> * </option>
+ 	 			<option value='/'> / </option>
+ 	 		 </select>
+ 	 	<td> <input type='number' id='num2'/> </td>
+ 	 	<td> <button onclick="calculate(num1.value, num2.value, op.value)">=</button>
+ 	 	<td> <input type='number' id='ans' readonly /></td>
+ 	 </tr>
+
+ 	</table>
+ </body>
+</HTML>
