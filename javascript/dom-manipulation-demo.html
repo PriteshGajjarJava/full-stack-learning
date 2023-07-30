@@ -1,0 +1,49 @@
+<HTML>
+  <head>
+    <style type="text/css">
+      button {
+        margin: 5px;
+      }
+      .highlight {
+        border: 5px solid orange;
+      }
+    </style>
+    <script type="text/javascript">
+      function addButton(val) {
+        var btnObj = document.createElement('button');
+        btnObj.innerHTML = val;
+        bodyObj.appendChild(btnObj);
+      }
+      function highlight(val) {
+        var buttons = document.getElementsByTagName('button');
+        for (var i = 0 ; i < buttons.length; i++) {
+          if(buttons[i].innerHTML == val) {
+            buttons[i].setAttribute('class', 'highlight');
+          } else {
+            buttons[i].removeAttribute('class');
+          }
+        }
+      }
+      function removeButton(val) {
+        var buttons = document.getElementsByTagName('button');
+        for (var i = 0 ; i < buttons.length; i++) {
+          if(buttons[i].innerHTML == val) {
+            bodyObj.removeChild(buttons[i]);
+            i--;
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    Enter number <input type="number" id="num"/>
+    <input type='button' onclick="addButton(num.value)" value="+"></input>
+    <input type='button' onclick="removeButton(num.value)" value="-"></input>
+    <input type='button' onclick="highlight(num.value)" value="Highlight"> </input>
+    <BR>
+  </body>
+  <script type="text/javascript">
+    var bodyObj = document.getElementsByTagName('body')[0];
+    console.log(bodyObj);
+  </script>
+</HTML>
