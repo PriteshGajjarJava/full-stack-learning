@@ -1,0 +1,28 @@
+<HTML>
+  <head>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script> -->
+    <script src="./jquery.js"></script>
+    <script type="text/javascript">
+      $(()=>{
+        $('#name').on("input", ()=>{
+          if ($('#name').val().length == 0) {
+            $('#btn').attr('disabled', true);
+          } else {
+            $('#btn').attr('disabled', false);
+          }
+        });
+
+        $('#btn').click(()=> {
+          var text = 'Welcome ' + $('#name').val();
+          window.alert(text);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    Enter name:
+    <input type="text" id="name"/>
+
+    <button id='btn' disabled>Click Me</button>
+  </body>
+</HTML>

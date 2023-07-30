@@ -1,0 +1,47 @@
+<HTML>
+  <head>
+    <style type="text/css">
+      button {
+        margin: 5px;
+      }
+      .highlight {
+        border: 5px solid orange;
+      }
+    </style>
+
+    <script type="text/javascript" src="./jquery.js"></script>
+    <script type="text/javascript">
+      $(()=>{
+        $('#addBtn').click(()=>{
+          $('<button>' + $('#num').val() + '</button>').appendTo('body');
+        });
+        $('#removeBtn').click(()=>{
+          for (var i =0; i < $('button').length; i++) {
+            var btn = $('button')[i];
+            if ($(btn).html() == $('#num').val()) {
+              $(btn).remove();
+              i--;
+            }
+          }
+        });
+        $('#highlightBtn').click(()=>{
+          for (var i =0; i < $('button').length; i++) {
+            var btn = $('button')[i];
+            if ($(btn).html() == $('#num').val()) {
+              $(btn).addClass('highlight');
+            } else {
+              $(btn).removeClass('highlight');
+            }
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    Enter number <input type="number" id="num"/>
+    <input type='button' id='addBtn' value="+"></input>
+    <input type='button' id='removeBtn' value="-"></input>
+    <input type='button' id='highlightBtn' value="Highlight"> </input>
+    <BR>
+  </body>
+</HTML>
