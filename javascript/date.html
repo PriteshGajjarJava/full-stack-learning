@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      function setTime() {
+        var timeObj = document.getElementById('time');
+        timeObj.innerHTML = new Date();
+        // new Date().toLocaleTimeString() for only Time
+        // new Date().toLocaleDateString()
+      }
+      var timeId = setInterval(setTime, 1000);
+
+      setInterval(() => {
+        clearInterval(timeId);
+        var body = document.getElementsByTagName('body')[0];
+        var h5Tag = document.createElement('h5');
+        h5Tag.innerHTML = 'stopped at' + new Date();
+        body.appendChild(h5Tag);
+      },15000);
+    </script>
+  </head>
+  <body>
+    Todays date is :
+    <span id="time"></span>
+  </body>
+  <script type="text/javascript">
+    setTime();
+  </script>
+</html>
