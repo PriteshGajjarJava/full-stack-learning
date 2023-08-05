@@ -1,0 +1,31 @@
+<HTML>
+  <head>
+    <script src="./jquery.js"></script>
+  </head>
+  <body>
+    <div id="clickme">
+      Click here
+    </div>
+    <button id="showBtn">Show</button> 
+    <button id="hideBtn">Hide</button> 
+    <img id="book" src="book.png" alt="" width="100" height="123">
+    
+  </body>
+
+  <script type="text/javascript">
+
+    $ ('#showBtn').on('click', function() {
+      $('#book').show();
+    });
+    $ ('#hideBtn').on('click', function() {
+      $('#book').hide();
+    });
+    $( "#clickme" ).on( "click", function() {
+      console.log('here');
+      $( "#book" ).toggle( "slow", function() {
+        // Animation complete.
+      });
+    });      
+  </script>
+
+</HTML>

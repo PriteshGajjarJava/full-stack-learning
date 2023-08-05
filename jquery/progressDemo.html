@@ -1,0 +1,33 @@
+<HTML>
+  <head>
+    <script src="./jquery.js"></script>
+  </head>
+  <body>
+    <progress id="progressBar" max="100" value="10"></progress>
+    <span id="currentValue"></span>
+    <input id='rangeInput' type="range" value="15"/>
+    <button id="increase"> ++ </button>
+    <button id="decrease"> -- </button>
+
+  </body>
+  <script type="text/javascript">
+
+    $('#rangeInput').on("change", function() {
+      var val = $(this).val();
+      $('#currentValue').html(val);
+    });
+    $('#increase').click(()=>{
+      var currentValue = $('#progressBar').val();
+      var newValue = currentValue + 5;
+      $('#currentValue').html(newValue);
+      $('#progressBar').val(newValue);
+    });
+    $('#decrease').click(()=>{
+      var currentValue = $('#progressBar').val();
+      var newValue = currentValue - 5;
+      $('#currentValue').html(newValue);
+      $('#progressBar').val(newValue);
+    });
+
+  </script>
+</HTML>

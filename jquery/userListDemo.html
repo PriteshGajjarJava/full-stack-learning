@@ -1,0 +1,93 @@
+<HTML>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./bootstrap.css">
+    <style type="text/css">
+      .headerLabel {
+        font-weight: bold;
+      }
+      .parentDiv {
+        padding-left: 100px;
+        padding-top: 20px;
+        padding-right: 100px;
+      }
+      img {
+        height: 50;
+        width: 50;
+      }
+      .headerRow {
+        display: none;
+        border: 2px solid gray;
+      }
+      .dataRow {
+        border: 1px solid black;
+        margin-top: 5px;
+      }
+    </style>
+
+    <script src="./jquery.js"></script>
+    <script type="text/javascript">
+      $(()=>{
+        $('#loadDataBtn').click(()=>{
+          var num = $('#totalUsers').val();
+          $.ajax({
+          url: "https://random-data-api.com/api/v2/users?size=" + num
+        }).done((resp) => {
+          $('.top').hide();
+          $('.headerRow').css('display', 'flex');
+          for (var i=0 ; i <resp.length; i++) {
+            var userName = resp[i].first_name + ' ' + resp[i].last_name;
+            var email = resp[i].email;
+            var phNo = resp[i].phone_number;
+            var photo = resp[i].avatar;
+            var dataContainerDiv = $(document.createElement('div'));
+            dataContainerDiv.addClass('row dataRow');
+            $(dataContainerDiv).appendTo($('.parentDiv'));
+            var userNameDiv = $(document.createElement('div'));
+            userNameDiv.addClass("column col-md-4");
+            userNameDiv.html(userName);
+
+            var photoDiv = $(document.createElement('div'));
+            photoDiv.addClass("column col-md-2");
+            photoDiv.html('<img src=' + photo + '/img>');
+
+            var emailDiv = $(document.createElement('div'));
+            emailDiv.addClass("column col-md-3");
+            emailDiv.html(email);
+
+            var phoneDiv = $(document.createElement('div'));
+            phoneDiv.addClass("column col-md-3");
+            phoneDiv.html(phNo);
+
+            photoDiv.appendTo(dataContainerDiv);
+            userNameDiv.appendTo(dataContainerDiv);
+            emailDiv.appendTo(dataContainerDiv);
+            phoneDiv.appendTo(dataContainerDiv);
+          }
+        });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="top">
+      Enter number of users <input type="number" id="totalUsers"/>
+      <button id="loadDataBtn">Load Data</button>
+    </div>
+    
+    <div class="parentDiv">
+      <div class="row headerRow">
+        <div class="column col-md-2 headerLabel">Photo</div>
+        <div class="column col-md-4  headerLabel">User Name</div>
+        <div class="column col-md-3 headerLabel">Email ID</div>
+        <div class="column col-md-3 headerLabel">PhoneNumber</div>  
+      </div>
+      <!-- <div class="row dataRow">
+        <div class="column col-md-2"><img src="./book.png"></div>
+        <div class="column col-md-4 ">James Adams</div>
+        <div class="column col-md-3">jamesadams@gmail.com</div>
+        <div class="column col-md-3">+1 1414-14141-1</div>  
+      </div>
+ -->
+    </div>
+  </body>
+</HTML>

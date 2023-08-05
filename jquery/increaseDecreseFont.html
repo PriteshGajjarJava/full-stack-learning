@@ -1,0 +1,25 @@
+<HTML>
+  <head>
+    <script src="./jquery.js"></script>
+  </head>
+  <body>
+    <h4 id="text"> We are learning jQuery !!</h4>
+    <button id="increase"> ++ </button>
+    <button id="decrease"> -- </button>
+  </body>
+  <script type="text/javascript">
+    $('#increase').click(() => {
+      var currentFont = $('#text').css('font-size'); // '16px'
+      var newFont = parseInt(currentFont.split('#')[0]);
+      newFont = ++newFont + 'px'; // ;'17px'
+      $('#text').css('font-size', newFont);
+    });
+
+    $('#decrease').click(() => {
+      var currentFont = $('#text').css('font-size'); // '16px'
+      var newFont = parseInt(currentFont.split('#')[0]);
+      newFont = --newFont + 'px'; // ;'15px'
+      $('#text').css('font-size', newFont);
+    });
+  </script>
+</HTML>
