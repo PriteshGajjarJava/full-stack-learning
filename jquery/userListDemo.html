@@ -26,6 +26,17 @@
 
     <script src="./jquery.js"></script>
     <script type="text/javascript">
+      class User {
+        constructor(photo, name, email, phone) {
+          this.photo = photo;
+          this.name = name;
+          this.email = email;
+          this.phone = phone;
+        }
+      }
+    </script>
+    <script type="text/javascript">
+      var users = [];
       $(()=>{
         $('#loadDataBtn').click(()=>{
           var num = $('#totalUsers').val();
@@ -35,35 +46,39 @@
           $('.top').hide();
           $('.headerRow').css('display', 'flex');
           for (var i=0 ; i <resp.length; i++) {
-            var userName = resp[i].first_name + ' ' + resp[i].last_name;
-            var email = resp[i].email;
-            var phNo = resp[i].phone_number;
-            var photo = resp[i].avatar;
+            var userObj = new User(
+              resp[i].avatar,
+              resp[i].first_name + ' ' + resp[i].last_name,
+              resp[i].email,
+              resp[i].phone_number);
+            users.push(userObj);
             var dataContainerDiv = $(document.createElement('div'));
             dataContainerDiv.addClass('row dataRow');
             $(dataContainerDiv).appendTo($('.parentDiv'));
             var userNameDiv = $(document.createElement('div'));
             userNameDiv.addClass("column col-md-4");
-            userNameDiv.html(userName);
+            userNameDiv.html(userObj.name);
 
             var photoDiv = $(document.createElement('div'));
             photoDiv.addClass("column col-md-2");
-            photoDiv.html('<img src=' + photo + '/img>');
+            photoDiv.html('<img src=' + userObj.photo + '/img>');
 
             var emailDiv = $(document.createElement('div'));
             emailDiv.addClass("column col-md-3");
-            emailDiv.html(email);
+            emailDiv.html(userObj.email);
 
             var phoneDiv = $(document.createElement('div'));
             phoneDiv.addClass("column col-md-3");
-            phoneDiv.html(phNo);
+            phoneDiv.html(userObj.phone);
 
             photoDiv.appendTo(dataContainerDiv);
             userNameDiv.appendTo(dataContainerDiv);
             emailDiv.appendTo(dataContainerDiv);
             phoneDiv.appendTo(dataContainerDiv);
           }
-        });
+          console.log("All users:" , users);
+          });
+          
         });
       });
     </script>

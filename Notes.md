@@ -94,5 +94,44 @@ Prirority order:
 While CSS rule should get executed is dervied based on concept called as
 "CSS Specificity"
 
+**WordPress**
+- Download Wordpress (Download wordpress project)
+- Save that package under PHP Server (XAMPP)
+- Run XAMPP server and load the project created
+- We can develop static content for our website (Theme, Navigation, Content, Header, Footer)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
