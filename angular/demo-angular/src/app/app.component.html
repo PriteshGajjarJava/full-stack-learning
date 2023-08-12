@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>User list</title>
+</head>
+<body>
+  <div class="parentDiv">
+    <div class="row headerRow">
+      <div class="column col-md-2 headerLabel">Photo</div>
+      <div class="column col-md-4  headerLabel">User Name</div>
+      <div class="column col-md-3 headerLabel">Email ID</div>
+      <div class="column col-md-3 headerLabel">PhoneNumber</div>  
+    </div>
+
+    <ng-container *ngFor="let user of users">
+      <div  class="row dataRow" >
+        <div class="column col-md-2"><img [src]="user?.avatar"/></div>
+        <div class="column col-md-4 "> {{ user?.first_name + ' ' + user?.last_name }}</div>
+        <div class="column col-md-3">{{user?.email}}</div>
+        <div class="column col-md-3">{{user?.phone_number}}</div>   
+      </div>
+    </ng-container>
+  </div>
+</body>
+</html>

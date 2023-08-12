@@ -102,6 +102,18 @@ While CSS rule should get executed is dervied based on concept called as
 
 
 
+Install node 
+node -v 
+npm -v
+npm install -g @angular/cli
+
+ng init hello-angular
+cd hello-angular
+ng serve
+
+
+
+
 
 
 
