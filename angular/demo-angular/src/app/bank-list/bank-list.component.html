@@ -1,0 +1,17 @@
+<div class="parentDiv">
+  <div class="row headerRow">
+    <div class="column col-md-2 headerLabel">ID</div>
+    <div class="column col-md-4  headerLabel">Account Number</div>
+    <div class="column col-md-3 headerLabel">Bank Name</div>
+    <div class="column col-md-3 headerLabel">Routing Number</div>  
+  </div>
+
+  <ng-container *ngFor="let bank of banks">
+    <div  class="row dataRow" >
+      <div class="column col-md-2">{{bank?.id}}</div>
+      <div class="column col-md-4 "> {{ bank?.account_number }}</div>
+      <div class="column col-md-3">{{bank?.bank_name}}</div>
+      <div class="column col-md-3">{{bank?.routing_number}}</div>   
+    </div>
+  </ng-container>
+</div>

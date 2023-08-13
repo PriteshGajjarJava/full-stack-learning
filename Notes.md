@@ -105,20 +105,38 @@ While CSS rule should get executed is dervied based on concept called as
 Install node 
 node -v 
 npm -v
+
 npm install -g @angular/cli
 
-ng init hello-angular
-cd hello-angular
+ng new demo1
+
+cd demo1
 ng serve
 
 
+.css (styling)
+.html (template)
+.ts (buisiness logic)
 
 
+1.ts -> 1.html (Selector)
+
+ng new demo-angular
+ng serve
+app.component.ts -> ngOniint() 
+
+ng generate service <> (httpClient)
 
 
-
-
-
+angular-project
+  |- angular.json (config of project) 
+  |- package.json (All dependencies)
+  |- styles.scss (Global CSS)
+  |- node_modules - Folder where all distribution packages are extracted(3rd party)
+  |- app
+  	|-src
+		|- app.module.ts
+ 
 
 
 
