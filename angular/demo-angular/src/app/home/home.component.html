@@ -1,1 +1,10 @@
-<p>home works!</p>
+<form [formGroup]="studentForm" (ngSubmit)="onSave()">
+  <input type="number" formControlName="id" placeholder="Enter ID"> &nbsp;
+  <input type="text" formControlName="name" placeholder="Enter Name"/> &nbsp;
+  <input type="number" formControlName="marks" placeholder="Enter Marks"/> &nbsp;
+  <button type="submit">Save Student</button>
+</form>
+
+<span *ngIf="success">
+  <h4> Record saved successfully ....</h4>
+</span>

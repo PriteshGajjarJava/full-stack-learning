@@ -68,7 +68,8 @@
               "browserTarget": "demo-angular:build:production"
             },
             "development": {
-              "browserTarget": "demo-angular:build:development"
+              "browserTarget": "demo-angular:build:development",
+              "proxyConfig":"src/proxy-conf.json"
             }
           },
           "defaultConfiguration": "development"

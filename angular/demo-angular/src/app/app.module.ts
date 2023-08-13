@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserListComponent } from './user-list/user-list.component';
 import { BankListComponent } from './bank-list/bank-list.component';
 import { HomeComponent } from './home/home.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
 
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }), // import routes
   ],
   providers: [],
