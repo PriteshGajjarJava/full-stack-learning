@@ -139,6 +139,54 @@ angular-project
  
 
 
+Install express:
+npm install express
+Create one folder (project)
+Create file main.js
+Update package.json by adding following:
+{
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
+
+Installing nodemon
+npm i nodemon -D
+
+npm install mysql
+
+**Steps to create Web application for Java 
+**
+
+- Download Apache Tomcat (core->zip)
+- Extract .zip file
+- Go to bin
+- Run startup.bat (or .sh)
+- Open localhost:8080 to check tomcat is running from browser
+- 2 issues might come in above
+	a) Port number issue - If Yes, change port number in /conf/server.xml
+	b) Java is NOT install. Install JDK
+
+Creating web project in Eclipse:
+- Install Eclipse for Java EE
+- Open Eclipse -> Change perspective (right top corner) -> Set prespective as Java EE
+- Create new Project (Dynamic Web project)
+- Click Next -> Next -> Tick option of Generating Web Deployment Desciptor file (web.xml)
+- Right click project -> add HTML file
+- Right click project -> Add Servlet 
+	a) Give class name for Servlet
+	b) Give appropriate URL
+	c) Select appropriate method (doGet or doPost)
+- If you see error in Servlet code about import package. You need to add lib(servlet-api.jar)
+	servlet-api.jar can be copied from Tomcat/lib folder
+	Right click project -> Build path -> module path -> Add external Jar file
+
+
+
+
 
 
 

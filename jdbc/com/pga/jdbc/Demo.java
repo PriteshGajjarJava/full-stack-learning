@@ -1,5 +1,10 @@
+package com.pga.jdbc;
 import java.sql.*;
 import java.util.*;
+
+import com.pga.jdbc.DBUtils;
+import com.pga.jdbc.Student;
+import com.pga.jdbc.StudentCRUD;
 
 public class Demo {
 	public static void main(String[] args) throws Exception {
@@ -30,8 +35,9 @@ public class Demo {
 				case 2: break;
 				case 3: break;
 				case 4:
-					List<Student> list = StudentCRUD.listStudents();
-					System.out.println(list);
+//					List<Student> list = StudentCRUD.listStudents();
+					Student s = StudentCRUD.getStudentById(2);
+					System.out.println(s);
 				break;
 				default: System.out.println("Invalid choice");
 			}

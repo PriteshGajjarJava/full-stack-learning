@@ -1,3 +1,5 @@
+package com.pga.jdbc;
+
 import java.sql.*;
 
 // Singleton Design Pattern

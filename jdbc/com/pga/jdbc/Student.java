@@ -1,10 +1,12 @@
+package com.pga.jdbc;
+
 // POJO - Plain Old Java Object
 public class Student {
 	private int id;
 	private String name;
 	private float marks;
 
-	Student() {}
+	public Student() {}
 	
 	public Student(int id, String name, float marks) {
 		super();
