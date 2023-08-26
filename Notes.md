@@ -185,6 +185,23 @@ Creating web project in Eclipse:
 	Right click project -> Build path -> module path -> Add external Jar file
 
 
+page
+request
+session
+application
+
+How to define servlet mapping in web.xml?
+  <servlet>
+  	<servlet-name>cube</servlet-name>
+  	<servlet-class>com.pga.CubeServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>cube</servlet-name>
+  	<url-pattern>/getCube</url-pattern>
+  </servlet-mapping>
+
+
 
 
 
