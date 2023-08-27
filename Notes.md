@@ -204,6 +204,61 @@ How to define servlet mapping in web.xml?
 
 
 
+http://192.168.184.46:8080/jsp-demo
+
+
+JSP, Servlets both are Server side programs.
+
+- Servlet
+	- This is Java class which inherits HttpServlet class. (This class comes from servlet-api.jar)
+	- To define a Servlet we must define an URL (URL mapping)
+	- We use Servlet when we have more Java code and less HTML
+	
+	
+- JSP:
+	- Java Server Pages. We add JSP with extension .jsp
+	- Every JSP gets converted into a Servlet. (JSP Engine)
+	- When we run JSP for first time, it will be slow. Later there is no difference.
+	- It's preferred when we have more HTML and less Java
+	
+JSP Tags:
+1) Scriptlet - Any java code we can write in scriptlet.
+
+	<%
+	
+	%>
+
+2) <%=   %> - Expression Tag
+   Used to read/evaluate variable
+
+3) <%! %> - Declaration Tag
+	Used to define variables and functions
+	
+4) <%@ %> - Directive Tag
+
+How to redirect to pages ?
+	1) Using Request Dispatche (forward) -> Used for redirecting to internal pages
+	2) To redirect to other websites - response.sendRedirect() method is used
+
+JSTL: JSP Tag Liabrary
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
